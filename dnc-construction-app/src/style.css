@@ -1,0 +1,356 @@
+/*Author: Colleen Marasha*/
+
+body {
+    background-color: #240f04;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* You'll need to place your Neon.jpg image in a public/images folder or update this path 
+    background-image: url('./images/Neon.jpg');*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    color: white; /* Default text color */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar .custom-search-input {
+    max-width: 280px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar .custom-search-input:hover,
+.navbar .custom-search-input:focus-within {
+    border-color:  white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar .custom-search-input .input-group-text {
+    background-color: transparent;
+    border: none;
+    padding: .375rem 0.5rem .375rem .75rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .custom-search-input .input-group-prepend {
+    background-color: transparent;
+    border: none;
+}
+
+
+/* Style for the improved search input group */
+.navbar .input-group {
+    max-width: 250px;
+}
+
+.navbar .input-group .form-control {
+    border-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+.navbar .input-group .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+.navbar .input-group .btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+.navbar .input-group .btn:hover {
+     background-color: rgba(255, 255, 255, 0.3);
+     border-color: rgba(255, 255, 255, 0.4);
+}
+
+/*Hero styles*/
+.hero-overlay > .container {
+     z-index: 2;
+     position: relative;
+}
+
+/* --- Quote Button and Modal Styling --- */
+
+/* Custom style for the "Get a Quote!" button */
+.btn-quote-hero {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    color: #240f04;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn-quote-hero:hover {
+    background-color: #ffe066;
+    border-color: #ffe066;
+    color: #000;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+}
+
+/* Modal Styling */
+#quoteModal .modal-content {
+    background-color: #f8f9fa;
+    color: #212529; /* Dark text color */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: none;
+}
+
+#quoteModal .modal-header {
+    background-color: #000000; /* Black header */
+    color: #fff; /* White text */
+    border-bottom: 1px solid #343a40; /* Subtle dark border */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#quoteModal .modal-header .modal-title {
+    font-weight: bold;
+}
+
+#quoteModal .modal-header .close {
+    color: #fff; /* White close button icon */
+    opacity: 0.8;
+}
+
+#quoteModal .modal-body {
+    padding: 30px;
+}
+
+/* Style for form labels within the modal */
+#quoteModal .modal-body label {
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+/* Style for form controls (inputs, selects, textarea) within the modal */
+#quoteModal .modal-body .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: .75rem 1rem; /* Adjust padding */
+    font-size: 1rem;
+}
+
+#quoteModal .modal-body .form-control:focus {
+    border-color: #007bff; /* Bootstrap primary color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Style for the submit button within the modal */
+#quoteModal .modal-body button[type="submit"] {
+    width: 100%; /* Make button full width */
+    padding: .75rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+.carousel-item {
+     height: 100vh;/* Let height be determined by content */
+    position: relative;
+    overflow: hidden;
+    /*max-height: 70vh; */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the area */
+    display: block;
+}
+
+.carousel-item .carousel-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   /* padding: 25px;*/
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    z-index: 2;
+}
+
+/* Carousel overlay list styling */
+.carousel-item .carousel-overlay ul {
+    list-style: disc; /* Add bullets */
+    text-align: left;
+    margin-top: 15px;
+    padding-left: 20px;
+    width: 100%;
+}
+.carousel-item .carousel-overlay li {
+     margin-bottom: 5px; /* Space out list items */
+}
+
+.carousel-overlay .form-control{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments for carousel overlay */
+@media (max-width: 768px) {
+    .carousel-item .carousel-overlay {
+        top: 30%; /* Lift the overlay higher on small screens */
+        padding: 15px; /* Less padding on small screens */
+    }
+     .carousel-item .carousel-overlay h2 {
+        font-size: 1.5rem; /* Reduce heading size on small screens */
+    }
+     .carousel-item .carousel-overlay p {
+        font-size: 0.9rem; /* Reduce text size on small screens */
+    }
+    .carousel-item .carousel-overlay ul {
+        padding-left: 15px; /* Adjust list padding on small screens */
+    }
+}
+
+
+/* Help Desk Icon Styling */
+.help-desk-icon {
+    position: fixed; /* Fixes the position to the viewport */
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    z-index: 1030;
+     transition: transform 0.3s ease;
+}
+
+.help-desk-icon:hover {
+    transform: scale(1.1);
+}
+
+.help-desk-icon img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+}
+
+
+/* Footer Styling */
+.footer {
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: 0 !important;
+    padding-top: 20px; /* Add some padding to the top of the footer */
+}
+
+.footer h5 {
+    margin-bottom: 15px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #00BFFF; /* Link color */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+.footer .social-icons {
+    margin-top: 10px;
+}
+
+.footer .icon {
+    color: #FFD700; /* Light gold for icons */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer .icon:hover {
+     color: #FFFFFF;
+}
+
+/* Styling for the footer logo */
+.footer .logo-wrapper {
+     margin-bottom: 15px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+.footer .logo-wrapper img {
+     max-width: 100%;
+     height: auto;
+     display: block;
+     margin: 0 auto;
+     max-height: 100px; /* Set a max height if desired */
+}
+
+@media (min-width: 768px) {
+    .footer .logo-wrapper {
+        margin-bottom: 0;
+        margin-left: 0; /* Remove centering margins on larger screens */
+        margin-right: 0;
+        text-align: right; /* Align logo right in its column */
+    }
+}
+
+/* Styling for Reusable Messages */
+#messageContainer {
+    position: fixed; /* fixed at the top */
+    top: 70px; /*below navbar */
+    left: 10px;
+    right: 10px;
+    z-index: 1050;
+}
+
+.testimonial-card {
+  background-color: rgba(255, 255, 255, 0.05); /* or rgba(255,255,255,0.1) */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+.project-details-section {
+  background-color: #121212; /* Dark background */
+  color: #f1f1f1; /* Light text */
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+.project-details-section .breadcrumb {
+  background: transparent;
+}
+
+.project-details-section .breadcrumb a {
+  color: #f1f1f1;
+}
+
+.project-details-section .card-dark {
+  background-color: #1f1f1f; /* Slightly lighter than page */
+  color: #f1f1f1;
+  border: none;
+}
+
+.project-details-section img {
+  border-radius: 8px;
+}
+
